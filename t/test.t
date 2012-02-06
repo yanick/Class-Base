@@ -17,29 +17,13 @@
 
 use strict;
 use warnings;
-use lib qw( ./lib );
 use Class::Base;
 
 
 #------------------------------------------------------------------------
 # mini test harness
 #------------------------------------------------------------------------
-# use Test::More tests => 93;
-
-print "1..93\n";
-my $n = 0;
-
-sub ok {
-    my ($flag, $msg) = @_;
-    print(($flag ? 'ok ' : 'not ok '), ++$n, 
-	    defined $msg ? " - $msg\n" : "\n");
-    return $flag;
-}
-
-sub is {
-    my ($a, $b, @msg) = @_;
-    ok( $a eq $b, @msg );
-}
+use Test::More tests => 93;
 
 #------------------------------------------------------------------------
 # quick hack to allow STDERR to be tied to a variable.
