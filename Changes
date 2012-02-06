@@ -1,0 +1,41 @@
+#========================================================================
+#
+# Changes 
+#
+# DESCRIPTION
+#   Revision history for the Class::Base module.
+#
+# AUTHOR
+#   Andy Wardley   <abw@kfs.org>
+#
+# REVISION
+#   $Id: Changes,v 1.1.1.1 2002/04/05 09:29:34 abw Exp $
+#
+#========================================================================
+
+#------------------------------------------------------------------------
+# Version 0.03 
+#------------------------------------------------------------------------
+
+* Added the params() method which is typically called from the init()
+  method to copy value from a configuration hash into $self.  
+
+* Minor changes to debug() method to only use object value _DEBUG if
+  defined, otherwise fall back on $DEBUG package variable.
+
+#------------------------------------------------------------------------
+# Version 0.02  2002/02/20
+#------------------------------------------------------------------------
+
+* Added the clone() method as suggested by Brian Moseley
+
+* Added the id(), debug() and debugging() methods to provide a fairly
+  simple mechanism for generating debugging information.
+
+
+#------------------------------------------------------------------------
+# Version 0.01  2002/01/11
+#------------------------------------------------------------------------
+
+* initial version
+
