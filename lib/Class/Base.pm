@@ -15,8 +15,6 @@
 #   This module is free software; you can redistribute it and/or
 #   modify it under the same terms as Perl itself.
 #
-# REVISION
-#   $Id: Base.pm,v 1.2 2002/04/05 09:48:51 abw Exp $
 #
 #========================================================================
 
@@ -24,8 +22,7 @@ package Class::Base;
 
 use strict;
 
-our $VERSION  = '0.03';
-our $REVISION = sprintf("%d.%02d", q$Revision: 1.2 $ =~ /(\d+)\.(\d+)/);
+our $VERSION  = '0.04';
 
 
 #------------------------------------------------------------------------
@@ -312,6 +309,9 @@ Class::Base - useful base class for deriving other modules
 
 
 =head1 DESCRIPTION
+
+Please consider using L<Badger::Base> instead which is the successor of
+this module.
 
 This module implements a simple base class from which other modules
 can be derived, thereby inheriting a number of useful methods such as
@@ -772,7 +772,7 @@ Andy Wardley E<lt>abw@kfs.orgE<gt>
 
 =head1 VERSION
 
-This is version 0.03 of Class::Base.
+This is version 0.04 of Class::Base.
 
 =head1 HISTORY
 
@@ -782,9 +782,11 @@ part of the Template Toolkit.
 Thanks to Brian Moseley and Matt Sergeant for suggesting various
 enhancments, some of which went into version 0.02.
 
+Version 0.04 was uploaded by Gabor Szabo.
+
 =head1 COPYRIGHT
 
-Copyright (C) 1996-2002 Andy Wardley.  All Rights Reserved.
+Copyright (C) 1996-2012 Andy Wardley.  All Rights Reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.

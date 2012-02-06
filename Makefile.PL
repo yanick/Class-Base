@@ -3,6 +3,9 @@ use ExtUtils::MakeMaker;
 my %opts = (
     'NAME'	   => 'Class::Base',
     'VERSION_FROM' => 'lib/Class/Base.pm',
+    'PREREQ_PM' => {
+        'Test::More' => 0.47,
+    },
 );
 
 if ($ExtUtils::MakeMaker::VERSION >= 5.43) {
