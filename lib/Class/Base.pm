@@ -48,7 +48,7 @@ sub new {
                       ? $config->{ debug }
               : defined $config->{ DEBUG }
                       ? $config->{ DEBUG }
-                      : ( ${"$class\::DEBUG"} || 0 );
+                      : ( do { local $^W; ${"$class\::DEBUG"} } || 0 );
 
     my $self = bless {
 	_ID    => $config->{ id    } || $config->{ ID    } || $class,
