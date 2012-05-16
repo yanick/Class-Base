@@ -6,6 +6,11 @@ my %opts = (
     'PREREQ_PM' => {
         'Test::More' => 0.47,
     },
+    META_MERGE        => {
+       resources => {
+           repository  =>  'https://github.com/szabgab/Class-Base',
+       },
+	},
 );
 
 if ($ExtUtils::MakeMaker::VERSION >= 5.43) {
