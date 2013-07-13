@@ -6,6 +6,7 @@ my %opts = (
     'PREREQ_PM' => {
         'Test::More' => 0.47,
     },
+    LICENSE  => 'perl',
     META_MERGE        => {
        resources => {
            repository  =>  'https://github.com/szabgab/Class-Base',
