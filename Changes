@@ -10,6 +10,10 @@
 #
 #========================================================================
 
+
+0.08 2016.08.25
+    Fix release (hopefully)
+
 0.07 2016.08.25
     BUILD_REQUIRES vs TEST_REQUIRES  (Kent Fredric)
 
