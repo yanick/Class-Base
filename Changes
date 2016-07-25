@@ -10,6 +10,8 @@
 #
 #========================================================================
 
+0.07 2016.08.25
+    BUILD_REQUIRES vs TEST_REQUIRES  (Kent Fredric)
 
 0.06 2014.08.26
     Add license to META files
