@@ -780,7 +780,7 @@ This module began life as the Template::Base module distributed as
 part of the Template Toolkit. 
 
 Thanks to Brian Moseley and Matt Sergeant for suggesting various
-enhancments, some of which went into version 0.02.
+enhancements, some of which went into version 0.02.
 
 Version 0.04 was uploaded by Gabor Szabo.
 
