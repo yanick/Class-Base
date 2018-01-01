@@ -21,7 +21,7 @@ use Class::Base;
 #------------------------------------------------------------------------
 # mini test harness
 #------------------------------------------------------------------------
-use Test::More tests => 93;
+use Test::More tests => 91;
 
 #------------------------------------------------------------------------
 # quick hack to allow STDERR to be tied to a variable.
@@ -131,9 +131,8 @@ subtest 'clone() method' => sub {
     };
 };
 
-#------------------------------------------------------------------------
-# test id method and constructor parameters
-#------------------------------------------------------------------------
+
+subtest 'id method and constructor parameters' => sub {
 
 my $obj = Class::Base->new();
 ok( $obj );
@@ -168,11 +167,11 @@ $obj->debug('hello world');
 ok( $stderr eq '[wiz] hello world' ) 
     or print "stderr is [$stderr] not '[wiz] hello world'\n";
 
-#------------------------------------------------------------------------
-# test debugging method and params
-#------------------------------------------------------------------------
+};
 
-$obj = Class::Base->new( );
+subtest 'debugging method and params' => sub {
+
+my $obj = Class::Base->new( );
 ok( $obj, 'debugging object created' );
 ok( ! $obj->debugging );
 ok(   $obj->debugging(1) );
@@ -232,10 +231,9 @@ ok( ! $My::Class::Base::DEBUG );
 
 My::Class::Base->debugging(1);
 ok( $My::Class::Base::DEBUG );
+};
 
-#------------------------------------------------------------------------
-# test package $DEBUG variable sets default object DEBUG flag
-#------------------------------------------------------------------------
+subtest 'package $DEBUG variable sets default object DEBUG flag' => sub {
 
 My::Class::Base->debugging(0);
 ok( ! $My::Class::Base::DEBUG, 'class debugging is off' );
@@ -256,6 +254,7 @@ ok( $obj2->debugging, 'object is debugging' );
 $stderr = '';
 $obj2->debug('foo');
 is( $stderr, '[My::Class::Base] foo', 'foo printed' );
+};
 
 
 #------------------------------------------------------------------------
@@ -331,7 +330,7 @@ sub init {
 package main;
 
 $pkg = 'My::Params::Test';
-$obj = $pkg->new();
+my $obj = $pkg->new();
 ok( $obj, 'got an object' );
 ok( ! exists $obj->{ ONE }, 'ONE does not exist' );
 
