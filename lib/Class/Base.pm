@@ -101,21 +101,19 @@ sub clone {
 
 sub error {
     my $self = shift;
-    my $errvar;
+    my $errvar = do {
+        # get a reference to the object or package variable we're munging
+        no strict qw( refs );
+        ref $self ? \$self->{ _ERROR } : \${"$self\::ERROR"};
+    };
 
-    { 
-	# get a reference to the object or package variable we're munging
-	no strict qw( refs );
-	$errvar = ref $self ? \$self->{ _ERROR } : \${"$self\::ERROR"};
-    }
     if (@_) {
-	# don't join if first arg is an object (may force stringification)
-	$$errvar = ref($_[0]) ? shift : join('', @_);
-	return undef;
+        # don't join if first arg is an object (may force stringification)
+        $$errvar = ref($_[0]) ? shift : join('', @_);
+        return undef;
     }
-    else {
-	return $$errvar;
-    }
+
+    return $$errvar;
 }
 
 
