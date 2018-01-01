@@ -20,9 +20,11 @@
 
 package Class::Base;
 
+
 use strict;
 use warnings;
 
+use Clone;
 
 our $VERSION  = '0.08';
 
@@ -85,8 +87,7 @@ sub init {
 #------------------------------------------------------------------------
 
 sub clone {
-    my $self = shift;
-    bless { %$self }, ref($self);
+    return Clone::clone(shift);
 }
 
 

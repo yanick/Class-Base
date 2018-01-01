@@ -115,15 +115,21 @@ ok( $mod );
 ok( ! $mod->error() );
 is( $mod->name(), 'foo' );
 
-#------------------------------------------------------------------------
-# test clone() method
-#------------------------------------------------------------------------
+subtest 'clone() method' => sub {
+    my $clone = $mod->clone;
+    ok $mod ;
+    ok ! $mod->error ;
+    is $mod->name, 'foo', 'clone is ok';
 
-my $clone = $mod->clone();
-ok( $mod );
-ok( ! $mod->error() );
-is( $mod->name(), 'foo', 'clone is ok' );
+    subtest 'deep cloning' => sub {
+        my $mod = Class::Test::Name->new( name => { a => 'ref' } );
+        my $clone = $mod->clone;
+        $clone->name->{a} = 'changed ref';
 
+        is $clone->name->{a}, 'changed ref', "the clone changes";
+        is $mod->name->{a}, 'ref', "the original didn't change";
+    };
+};
 
 #------------------------------------------------------------------------
 # test id method and constructor parameters
