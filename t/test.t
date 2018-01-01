@@ -11,8 +11,6 @@
 # This is free software; you can redistribute it and/or modify it
 # under the same terms as Perl itself.
 #
-# $Id: test.pl,v 1.1.1.1 2002/04/05 09:29:34 abw Exp $
-#
 #========================================================================
 
 use strict;
