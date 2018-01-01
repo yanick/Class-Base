@@ -132,7 +132,8 @@ sub id {
     return  ($self->{ _ID } = shift) if ref $self && @_;
 
     # otherwise return id as $self->{ _ID } or class name 
-    my $id = $self->{ _ID } if ref $self;
+    my $id;
+    $id = $self->{ _ID } if ref $self;
     $id ||= ref($self) || $self;
 
     return $id;
