@@ -21,6 +21,8 @@
 package Class::Base;
 
 use strict;
+use warnings;
+
 
 our $VERSION  = '0.08';
 
