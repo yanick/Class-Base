@@ -20,7 +20,11 @@
 
 package Class::Base;
 
+
 use strict;
+use warnings;
+
+use Clone;
 
 our $VERSION  = '0.08';
 
@@ -71,8 +75,7 @@ sub new {
 #------------------------------------------------------------------------
 
 sub init {
-    my ($self, $config) = @_;
-    return $self;
+    return $_[0];
 }
 
 
@@ -84,8 +87,7 @@ sub init {
 #------------------------------------------------------------------------
 
 sub clone {
-    my $self = shift;
-    bless { %$self }, ref($self);
+    return Clone::clone(shift);
 }
 
 
@@ -102,21 +104,19 @@ sub clone {
 
 sub error {
     my $self = shift;
-    my $errvar;
+    my $errvar = do {
+        # get a reference to the object or package variable we're munging
+        no strict qw( refs );
+        ref $self ? \$self->{ _ERROR } : \${"$self\::ERROR"};
+    };
 
-    { 
-	# get a reference to the object or package variable we're munging
-	no strict qw( refs );
-	$errvar = ref $self ? \$self->{ _ERROR } : \${"$self\::ERROR"};
-    }
     if (@_) {
-	# don't join if first arg is an object (may force stringification)
-	$$errvar = ref($_[0]) ? shift : join('', @_);
-	return undef;
+        # don't join if first arg is an object (may force stringification)
+        $$errvar = ref($_[0]) ? shift : join('', @_);
+        return undef;
     }
-    else {
-	return $$errvar;
-    }
+
+    return $$errvar;
 }
 
 
@@ -135,7 +135,8 @@ sub id {
     return  ($self->{ _ID } = shift) if ref $self && @_;
 
     # otherwise return id as $self->{ _ID } or class name 
-    my $id = $self->{ _ID } if ref $self;
+    my $id;
+    $id = $self->{ _ID } if ref $self;
     $id ||= ref($self) || $self;
 
     return $id;
