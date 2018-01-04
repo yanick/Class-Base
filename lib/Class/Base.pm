@@ -1,6 +1,7 @@
 package Class::Base;
+our $AUTHORITY = 'cpan:YANICK';
 # ABSTRACT: useful base class for deriving other modules 
-
+$Class::Base::VERSION = '0.09';
 
 use strict;
 use warnings;
@@ -242,6 +243,19 @@ sub debugging {
 
 1;
 
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Class::Base - useful base class for deriving other modules 
+
+=head1 VERSION
+
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -279,7 +293,6 @@ sub debugging {
 
     # debug() prints to STDERR if debugging enabled
     $object->debug('The ', $animal, ' sat on the ', $place);
-
 
 =head1 DESCRIPTION
 
@@ -588,7 +601,6 @@ or
     my $object = My::Class->new({ foo => 'bar' }) # params hashref
 	  || die My::Class->error;                # class method
 
-
 =head2 init(\%config)
 
 Object initialiser method which is called by the C<new()> method, passing
@@ -748,5 +760,30 @@ Thanks to Brian Moseley and Matt Sergeant for suggesting various
 enhancements, some of which went into version 0.02.
 
 Version 0.04 was uploaded by Gabor Szabo.
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Andy Wardley    <abw@kfs.org>
+
+=item *
+
+Gabor Szabo  <gabor@szabgab.com>
+
+=item *
+
+Yanick Champoux <yanick@cpan.org>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2018, 2016, 2014, 2012 by Andy Wardley.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
