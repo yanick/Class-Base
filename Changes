@@ -6,8 +6,11 @@
   [ BUG FIXES ]
 
   [ DOCUMENTATION ]
+  - Fix pod typo. (GH#4, knowledgejunkie)
 
   [ ENHANCEMENTS ]
+  - clone method now deep clone. 
+  - a few minor refactorings.
 
   [ NEW FEATURES ]
 
