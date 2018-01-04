@@ -1,33 +1,11 @@
-#============================================================= -*-perl-*-
-#
-# Class::Base
-#
-# DESCRIPTION
-#   Module implementing a common base class from which other modules
-#   can be derived.
-#
-# AUTHOR
-#   Andy Wardley    <abw@kfs.org>
-#
-# COPYRIGHT
-#   Copyright (C) 1996-2002 Andy Wardley.  All Rights Reserved.
-#
-#   This module is free software; you can redistribute it and/or
-#   modify it under the same terms as Perl itself.
-#
-#
-#========================================================================
-
 package Class::Base;
+# ABSTRACT: useful base class for deriving other modules 
 
 
 use strict;
 use warnings;
 
 use Clone;
-
-our $VERSION  = '0.08';
-
 
 #------------------------------------------------------------------------
 # new(@config)
@@ -266,10 +244,6 @@ sub debugging {
 
 1;
 
-
-=head1 NAME
-
-Class::Base - useful base class for deriving other modules 
 
 =head1 SYNOPSIS
 
@@ -767,14 +741,6 @@ of course subclass the method to return some other value.  When called
 with an argument it uses that value to set its internal C<_ID> field
 which will be returned by subsequent calls to C<id()>.
 
-=head1 AUTHOR
-
-Andy Wardley E<lt>abw@kfs.orgE<gt>
-
-=head1 VERSION
-
-This is version 0.04 of Class::Base.
-
 =head1 HISTORY
 
 This module began life as the Template::Base module distributed as 
@@ -784,12 +750,5 @@ Thanks to Brian Moseley and Matt Sergeant for suggesting various
 enhancements, some of which went into version 0.02.
 
 Version 0.04 was uploaded by Gabor Szabo.
-
-=head1 COPYRIGHT
-
-Copyright (C) 1996-2012 Andy Wardley.  All Rights Reserved.
-
-This module is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself.
 
 =cut

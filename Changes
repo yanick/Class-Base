@@ -1,14 +1,17 @@
-#========================================================================
-#
-# Changes 
-#
-# DESCRIPTION
-#   Revision history for the Class::Base module.
-#
-# AUTHOR
-#   Andy Wardley   <abw@kfs.org>
-#
-#========================================================================
+ Revision history for the Class::Base module
+
+{{$NEXT}}
+  [ API CHANGES ]
+
+  [ BUG FIXES ]
+
+  [ DOCUMENTATION ]
+
+  [ ENHANCEMENTS ]
+
+  [ NEW FEATURES ]
+
+  [ STATISTICS ]
 
 
 0.08 2016.08.25
