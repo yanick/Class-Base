@@ -229,8 +229,6 @@ sub debug {
 
 sub debugging {
     my $self  = shift;
-    my $class = ref $self;
-    my $flag;
 
     no strict 'refs';
 
